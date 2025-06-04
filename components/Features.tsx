@@ -7,8 +7,8 @@ const Features = () => {
     {
       icon: Mail,
       title: 'Secure AI Communication',
-      description: 'Military-grade encrypted messaging system',
-      details: 'NSA-approved encryption protocols for all district personnel and student communications.',
+      description: 'Federal-grade encrypted messaging system',
+      details: 'Department of Education approved encryption protocols for all district personnel and student communications.',
       color: 'from-blue-500 to-blue-600'
     },
     {
@@ -20,16 +20,16 @@ const Features = () => {
     },
     {
       icon: Settings,
-      title: 'National Command Center',
-      description: 'Centralized federal oversight dashboard',
-      details: 'Pentagon-grade command and control systems for district-wide operations.',
+      title: 'District Command Center',
+      description: 'Centralized educational oversight dashboard',
+      details: 'Department of Education approved command and control systems for district-wide operations.',
       color: 'from-green-500 to-green-600'
     },
     {
       icon: Database,
-      title: 'Classified Data Vault',
-      description: 'Top Secret clearance-level data protection',
-      details: 'CIA-grade encryption and storage for all sensitive educational intelligence.',
+      title: 'Secure Education Vault',
+      description: 'Federal-grade data protection for schools',
+      details: 'Department of Education approved encryption and storage for all sensitive educational data.',
       color: 'from-orange-500 to-orange-600'
     },
     {

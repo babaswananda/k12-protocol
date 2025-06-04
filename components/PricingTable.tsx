@@ -51,41 +51,41 @@ const PricingTable = () => {
       features: [
         'All District Contract features',
         'Dedicated federal liaison',
-        'National security vault cluster',
+        'State education vault cluster',
         'Government training facilities',
-        'White House briefing access',
-        'Congressional reporting tools',
+        'Department of Education access',
+        'State reporting tools',
         'Federal development team',
-        'National security oversight'
+        'Educational oversight'
       ],
-      cta: 'Contact Pentagon',
+      cta: 'Contact Department of Education',
       popular: false,
       color: 'border-federal-400'
     },
     {
-      name: 'National Security',
+      name: 'National Education',
       description: 'Multi-State Deployment',
-      price: 'TOP SECRET',
+      price: 'STRATEGIC',
       period: '',
-      classification: 'TOP SECRET',
+      classification: 'OFFICIAL USE ONLY',
       features: [
         'All State Contract features',
-        'National infrastructure control',
-        'Presidential briefing access',
-        'Joint Chiefs oversight',
-        'International partnerships',
-        'National defense integration',
-        'Congressional testimony support',
+        'National education control',
+        'Secretary of Education access',
+        'Federal education oversight',
+        'Interstate partnerships',
+        'National education integration',
+        'Congressional education support',
         'Executive order compliance'
       ],
-      cta: 'Contact NSA',
+      cta: 'Contact Federal Education Office',
       popular: false,
-      color: 'border-red-600'
+      color: 'border-education-600'
     }
   ]
 
   return (
-    <section id="pricing" className="py-24 bg-federal-50 border-t-4 border-usgov-600">
+    <section id="pricing" className="py-24 bg-federal-50 border-t-4 border-usgov-600 relative">
       {/* Government Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 

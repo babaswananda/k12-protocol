@@ -34,7 +34,10 @@ const WhyK12Section = () => {
   ]
 
   return (
-    <section id="why-k12" className="py-24 bg-federal-50 border-t-4 border-usgov-600">
+    <section id="why-k12" className="py-24 bg-federal-50 border-t-4 border-usgov-600 relative">
+      {/* Government Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
       {/* Government Section Header */}
       <div className="bg-federal-900 text-white py-8 mb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

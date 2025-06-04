@@ -35,8 +35,11 @@ const TestimonialsSection = () => {
   ]
 
   return (
-    <section className="py-24 bg-federal-900 text-white border-t-4 border-usgov-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-federal-900 text-white border-t-4 border-usgov-600 relative">
+      {/* Government Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Federal Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center space-x-4 mb-6">

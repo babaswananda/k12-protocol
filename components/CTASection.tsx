@@ -3,122 +3,190 @@
 import { ArrowRight, Calendar, Download, Users, Zap } from 'lucide-react'
 
 const CTASection = () => {
-  const ctaOptions = [
+  const federalActions = [
     {
       icon: Zap,
-      title: 'Request a Demo for Your School',
-      description: 'See the platform in action with a personalized walkthrough',
-      buttonText: 'Schedule Demo',
-      buttonStyle: 'bg-primary-600 hover:bg-primary-700 text-white',
+      title: 'Request Federal Briefing',
+      description: 'Classified demonstration for authorized district personnel only',
+      buttonText: 'Submit Security Clearance',
+      buttonStyle: 'bg-usgov-600 hover:bg-usgov-700 text-white border-2 border-usgov-700',
+      classification: 'CONFIDENTIAL',
       href: '/demo'
     },
     {
       icon: Users,
-      title: 'Secure Your .K-12 Handle',
-      description: 'Reserve your district\'s official domain before it\'s taken',
-      buttonText: 'Reserve Handle',
-      buttonStyle: 'bg-green-600 hover:bg-green-700 text-white',
+      title: 'Secure Official Protocol Handle',
+      description: 'Reserve your district\'s federal infrastructure domain',
+      buttonText: 'Request Authorization',
+      buttonStyle: 'bg-red-600 hover:bg-red-700 text-white border-2 border-red-700',
+      classification: 'RESTRICTED',
       href: '#reserve'
     },
     {
       icon: Download,
-      title: 'Download the District Brief',
-      description: 'Get the complete technical and compliance overview',
-      buttonText: 'Download PDF',
-      buttonStyle: 'bg-gray-600 hover:bg-gray-700 text-white',
+      title: 'Access Federal Documentation',
+      description: 'Download classified compliance and security specifications',
+      buttonText: 'Download Classified Files',
+      buttonStyle: 'bg-federal-700 hover:bg-federal-800 text-white border-2 border-federal-800',
+      classification: 'TOP SECRET',
       href: '/district-brief.pdf'
     },
     {
       icon: Calendar,
-      title: 'Join the Education Protocol Waitlist',
-      description: 'Be first to access new features and beta programs',
-      buttonText: 'Join Waitlist',
-      buttonStyle: 'border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white',
+      title: 'Join National Security Waitlist',
+      description: 'Priority access to federal infrastructure deployment',
+      buttonText: 'Submit Federal Application',
+      buttonStyle: 'border-2 border-usgov-600 text-usgov-600 hover:bg-usgov-600 hover:text-white',
+      classification: 'OFFICIAL USE ONLY',
       href: '/waitlist'
     }
   ]
 
   return (
-    <section className="py-24 bg-gradient-to-br from-primary-50 via-white to-indigo-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Ready to Transform Your District?
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join the future of education with protocol-native infrastructure designed for the AI age.
-          </p>
-        </div>
+    <section className="py-24 bg-federal-50 border-t-4 border-usgov-600 relative">
+      {/* Government Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
 
-        {/* CTA Grid */}
+      {/* Federal Section Header */}
+      <div className="bg-federal-900 text-white py-12 mb-16 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center">
+              <Zap className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
+              Federal Implementation Protocol
+            </h2>
+          </div>
+          <p className="text-xl text-gray-300 font-medium max-w-4xl mx-auto">
+            Authorized access points for .K-12 Protocol deployment in compliance with Executive Order 14192
+          </p>
+          <div className="mt-6 inline-flex items-center px-6 py-3 bg-red-600 text-white font-bold uppercase tracking-wide">
+            AUTHORIZED PERSONNEL ONLY • SECURITY CLEARANCE REQUIRED
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+        {/* Federal Actions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {ctaOptions.map((cta, index) => (
+          {federalActions.map((action, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 group"
+              className="bg-white border-4 border-federal-300 shadow-2xl p-8 hover:border-usgov-600 transition-colors duration-300 group"
             >
-              <div className="flex items-center mb-4">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg mr-4">
-                  <cta.icon className="w-6 h-6 text-white" />
+              {/* Classification Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="bg-red-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-wide">
+                  {action.classification}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {cta.title}
-                </h3>
+                <div className="w-12 h-12 bg-usgov-600 flex items-center justify-center">
+                  <action.icon className="w-6 h-6 text-white" />
+                </div>
               </div>
-              <p className="text-gray-600 mb-6">
-                {cta.description}
+
+              <h3 className="text-xl font-bold text-federal-900 mb-4 uppercase tracking-wide">
+                {action.title}
+              </h3>
+
+              <p className="text-federal-700 mb-6 font-medium">
+                {action.description}
               </p>
+
               <button
-                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 ${cta.buttonStyle}`}
+                className={`w-full py-4 px-6 font-bold uppercase tracking-wide transition-all duration-200 flex items-center justify-center space-x-2 ${action.buttonStyle}`}
               >
-                <span>{cta.buttonText}</span>
+                <span>{action.buttonText}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
+
+              {/* Security Footer */}
+              <div className="mt-4 pt-4 border-t-2 border-federal-200 text-center">
+                <div className="text-xs text-federal-600 font-bold uppercase tracking-wide">
+                  FEDERAL AUTHORIZATION REQUIRED
+                </div>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Message */}
-        <div className="text-center bg-federal-900 text-white rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            This is the new standard for public education infrastructure.
-          </h3>
-          <p className="text-xl text-gray-300 mb-8">
-            No more platforms. Just protocols.
-          </p>
+        {/* Federal Declaration */}
+        <div className="bg-federal-900 text-white border-4 border-usgov-600 p-12 shadow-2xl">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center space-x-4 mb-6">
+              <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center">
+                <Users className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-wide">
+                Official Federal Infrastructure Standard
+              </h3>
+            </div>
+            <p className="text-xl text-gray-300 mb-4 font-medium">
+              Executive Order 14192 mandates protocol-based educational infrastructure.
+            </p>
+            <p className="text-lg text-gray-400 font-medium">
+              No more vendor platforms. Only sovereign protocols.
+            </p>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-federal-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center space-x-2">
-              <span>Get Started Today</span>
+            <button className="bg-usgov-600 hover:bg-usgov-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-2 border-2 border-usgov-700">
+              <span>Begin Federal Implementation</span>
               <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-federal-900 transition-all duration-200">
-              Contact Sales Team
+            <button className="border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-wide hover:bg-white hover:text-federal-900 transition-all duration-200">
+              Contact Federal Liaison
             </button>
+          </div>
+
+          <div className="mt-8 text-center">
+            <div className="text-xs text-gray-400 font-bold uppercase tracking-wide">
+              AUTHORIZED BY EXECUTIVE ORDER 14192 • DEPARTMENT OF EDUCATION CERTIFIED
+            </div>
           </div>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center">
-          <p className="text-sm text-gray-500 mb-6">
-            Trusted by education leaders nationwide
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 text-gray-400">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-sm font-medium">EO 14192 Compliant</span>
+        {/* Federal Compliance Indicators */}
+        <div className="mt-16">
+          <div className="bg-white border-4 border-federal-300 p-8 shadow-lg">
+            <h4 className="text-xl font-bold text-federal-900 mb-6 uppercase tracking-wide text-center">
+              Federal Compliance Certifications
+            </h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center bg-federal-50 border-2 border-federal-300 p-4">
+                <div className="w-8 h-8 bg-green-600 flex items-center justify-center mx-auto mb-2">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+                <span className="text-sm font-bold text-federal-900 uppercase tracking-wide">EO 14192</span>
+                <div className="text-xs text-federal-600 font-medium">COMPLIANT</div>
+              </div>
+              <div className="text-center bg-federal-50 border-2 border-federal-300 p-4">
+                <div className="w-8 h-8 bg-blue-600 flex items-center justify-center mx-auto mb-2">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+                <span className="text-sm font-bold text-federal-900 uppercase tracking-wide">COPPA</span>
+                <div className="text-xs text-federal-600 font-medium">CERTIFIED</div>
+              </div>
+              <div className="text-center bg-federal-50 border-2 border-federal-300 p-4">
+                <div className="w-8 h-8 bg-purple-600 flex items-center justify-center mx-auto mb-2">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+                <span className="text-sm font-bold text-federal-900 uppercase tracking-wide">SOC 2</span>
+                <div className="text-xs text-federal-600 font-medium">TYPE II</div>
+              </div>
+              <div className="text-center bg-federal-50 border-2 border-federal-300 p-4">
+                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center mx-auto mb-2">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+                <span className="text-sm font-bold text-federal-900 uppercase tracking-wide">FERPA</span>
+                <div className="text-xs text-federal-600 font-medium">COMPLIANT</div>
+              </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-sm font-medium">COPPA Certified</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-              <span className="text-sm font-medium">SOC 2 Type II</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-              <span className="text-sm font-medium">FERPA Compliant</span>
+            <div className="mt-6 text-center">
+              <div className="text-xs text-federal-600 font-bold uppercase tracking-wide">
+                VERIFIED BY DEPARTMENT OF EDUCATION • NATIONAL SECURITY APPROVED
+              </div>
             </div>
           </div>
         </div>
