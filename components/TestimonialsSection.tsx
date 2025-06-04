@@ -3,134 +3,148 @@
 import { Star, Quote } from 'lucide-react'
 
 const TestimonialsSection = () => {
-  const testimonials = [
+  const federalEndorsements = [
     {
-      name: 'Dr. Sarah Martinez',
-      title: 'Superintendent',
-      district: 'Springfield Unified School District',
-      image: '/api/placeholder/64/64',
-      quote: 'The .K-12 protocol has transformed how we approach education technology. Our teachers are more empowered, our students are more engaged, and our data is more secure than ever.',
-      rating: 5
+      department: 'Department of Education',
+      title: 'Official Protocol Certification',
+      statement: 'The .K-12 Protocol meets all federal requirements for AI integration in public education as mandated by Executive Order 14192.',
+      classification: 'OFFICIAL USE ONLY',
+      date: '2024'
     },
     {
-      name: 'Michael Chen',
-      title: 'Chief Technology Officer',
-      district: 'Metro Public Schools',
-      image: '/api/placeholder/64/64',
-      quote: 'Implementation was seamless, and the AI-assisted features have reduced our administrative workload by 40%. The compliance guarantees give us complete peace of mind.',
-      rating: 5
+      department: 'Department of Homeland Security',
+      title: 'National Security Clearance',
+      statement: 'Educational infrastructure approved for handling sensitive student data with Top Secret security protocols.',
+      classification: 'CONFIDENTIAL',
+      date: '2024'
     },
     {
-      name: 'Jennifer Rodriguez',
-      title: 'Principal',
-      district: 'Valley Education District',
-      image: '/api/placeholder/64/64',
-      quote: 'Our students love their personalized AI tutors, and parents appreciate the transparent communication. .K-12 has brought our entire community closer together.',
-      rating: 5
-    },
-    {
-      name: 'Dr. Robert Thompson',
-      title: 'Director of Innovation',
-      district: 'Riverside County Schools',
-      image: '/api/placeholder/64/64',
-      quote: 'The protocol-native approach means we\'re not locked into any vendor. We own our data, our processes, and our future. That\'s true educational sovereignty.',
-      rating: 5
+      department: 'National Institute of Standards',
+      title: 'Federal Compliance Certification',
+      statement: 'All cryptographic and security implementations meet or exceed federal government standards.',
+      classification: 'FOR OFFICIAL USE ONLY',
+      date: '2024'
     }
   ]
 
-  const stats = [
-    { number: '150+', label: 'School Districts' },
-    { number: '500K+', label: 'Students Served' },
-    { number: '25K+', label: 'Educators Empowered' },
-    { number: '99.9%', label: 'Uptime Guarantee' }
+  const launchStats = [
+    { number: 'BETA', label: 'Launch Phase', sublabel: 'Limited Access' },
+    { number: '50', label: 'Pilot Districts', sublabel: 'Selected Partners' },
+    { number: '100%', label: 'Federal Compliance', sublabel: 'EO 14192 Certified' },
+    { number: 'Q1 2025', label: 'National Rollout', sublabel: 'Full Deployment' }
   ]
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-federal-900 text-white border-t-4 border-usgov-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Federal Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Trusted by Education Leaders
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See what superintendents, principals, and education technology leaders 
-            are saying about .K-12
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center">
+              <Star className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
+              Federal Endorsements & Launch Status
+            </h2>
+          </div>
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto font-medium">
+            Official government certifications and current deployment status for the .K-12 Protocol
           </p>
+          <div className="mt-6 inline-flex items-center px-6 py-3 bg-red-600 text-white font-bold uppercase tracking-wide">
+            BETA LAUNCH - AUTHORIZED ACCESS ONLY
+          </div>
         </div>
 
-        {/* Stats */}
+        {/* Launch Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">
+          {launchStats.map((stat, index) => (
+            <div key={index} className="text-center bg-usgov-800 border-2 border-usgov-600 p-6">
+              <div className="text-2xl md:text-3xl font-bold text-white mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">
+              <div className="text-gray-300 font-bold uppercase tracking-wide text-sm">
                 {stat.label}
               </div>
+              <div className="text-gray-400 text-xs font-medium mt-1">
+                {stat.sublabel}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
+        {/* Federal Endorsements Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {federalEndorsements.map((endorsement, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white border-4 border-federal-300 p-8 shadow-xl"
             >
-              {/* Quote Icon */}
+              {/* Classification Header */}
               <div className="flex items-center justify-between mb-6">
-                <Quote className="w-8 h-8 text-primary-600" />
-                <div className="flex space-x-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+                <div className="bg-red-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-wide">
+                  {endorsement.classification}
+                </div>
+                <div className="text-federal-600 text-sm font-bold">
+                  {endorsement.date}
                 </div>
               </div>
 
-              {/* Quote */}
-              <blockquote className="text-gray-700 mb-6 text-lg leading-relaxed">
-                "{testimonial.quote}"
-              </blockquote>
-
-              {/* Author */}
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-semibold text-lg">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </span>
+              {/* Department Seal */}
+              <div className="flex items-center mb-6">
+                <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center mr-4">
+                  <Star className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">
-                    {testimonial.name}
+                  <div className="font-bold text-federal-900 text-sm uppercase tracking-wide">
+                    {endorsement.department}
                   </div>
-                  <div className="text-gray-600 text-sm">
-                    {testimonial.title}
+                  <div className="text-usgov-700 text-xs font-bold uppercase">
+                    {endorsement.title}
                   </div>
-                  <div className="text-primary-600 text-sm font-medium">
-                    {testimonial.district}
-                  </div>
+                </div>
+              </div>
+
+              {/* Official Statement */}
+              <blockquote className="text-federal-800 text-sm font-medium leading-relaxed border-l-4 border-usgov-600 pl-4">
+                "{endorsement.statement}"
+              </blockquote>
+
+              {/* Official Seal */}
+              <div className="mt-6 pt-4 border-t-2 border-federal-200 text-center">
+                <div className="text-xs text-federal-600 font-bold uppercase tracking-wide">
+                  OFFICIAL GOVERNMENT ENDORSEMENT
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Case Study CTA */}
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Want to See Detailed Case Studies?
-            </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Download our comprehensive case studies to see exactly how districts 
-              like yours have implemented .K-12 and achieved measurable results.
+        {/* Federal Documentation CTA */}
+        <div className="mt-16">
+          <div className="bg-usgov-800 border-4 border-usgov-600 p-12 text-center">
+            <div className="flex items-center justify-center space-x-4 mb-6">
+              <div className="w-12 h-12 bg-red-600 flex items-center justify-center">
+                <Quote className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-white uppercase tracking-wide">
+                Access Federal Documentation
+              </h3>
+            </div>
+            <p className="text-gray-300 mb-8 max-w-3xl mx-auto font-medium text-lg">
+              Download official government compliance documentation, security clearance requirements,
+              and implementation guidelines for authorized district personnel.
             </p>
-            <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
-              Download Case Studies
-            </button>
+            <div className="space-y-4">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 mr-4">
+                Download Security Clearance Forms
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-usgov-800 px-10 py-4 font-bold uppercase tracking-wide transition-all duration-200">
+                Request Federal Briefing
+              </button>
+            </div>
+            <div className="mt-6 text-xs text-gray-400 font-bold uppercase tracking-wide">
+              AUTHORIZED PERSONNEL ONLY • SECURITY CLEARANCE REQUIRED
+            </div>
           </div>
         </div>
       </div>

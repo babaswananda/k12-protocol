@@ -16,29 +16,50 @@ const Header = () => {
   ]
 
   return (
-    <header className="bg-white/80 backdrop-blur-xl border-b border-white/20 sticky top-0 z-50 shadow-lg">
+    <header className="bg-white border-b-4 border-usgov-600 sticky top-0 z-50 shadow-sm">
+      {/* Government Banner */}
+      <div className="bg-federal-900 text-white py-1">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between text-xs">
+            <div className="flex items-center space-x-4">
+              <span className="font-semibold">OFFICIAL GOVERNMENT PROTOCOL</span>
+              <span>•</span>
+              <span>EO 14192 COMPLIANT</span>
+              <span>•</span>
+              <span>DEPARTMENT OF EDUCATION CERTIFIED</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <span>🇺🇸</span>
+              <span>United States of America</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex w-full items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="group flex items-center space-x-3">
-              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary-600 to-purple-600 rounded-xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <Shield className="w-7 h-7 text-white" />
+            <Link href="/" className="flex items-center space-x-4">
+              <div className="flex items-center justify-center w-14 h-14 bg-usgov-600 rounded-none border-2 border-usgov-700">
+                <Shield className="w-8 h-8 text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="font-display text-2xl font-black text-gray-900 group-hover:text-primary-600 transition-colors duration-300">.K-12</span>
-                <span className="text-xs text-gray-500 -mt-1 font-medium">Protocol</span>
+                <div className="flex items-center space-x-2">
+                  <span className="font-display text-2xl font-bold text-federal-900">.K-12</span>
+                  <span className="bg-usgov-600 text-white px-2 py-0.5 text-xs font-bold rounded-none">PROTOCOL</span>
+                </div>
+                <span className="text-xs text-federal-600 font-semibold uppercase tracking-wide">Official Education Infrastructure</span>
               </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                className="text-federal-700 hover:text-usgov-600 hover:bg-federal-50 px-4 py-2 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 border-b-2 border-transparent hover:border-usgov-600"
               >
                 {item.name}
               </Link>
@@ -46,19 +67,19 @@ const Header = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <Link
               href="/demo"
-              className="text-primary-600 hover:text-primary-700 px-5 py-2 text-sm font-semibold transition-colors duration-200 rounded-lg hover:bg-primary-50"
+              className="text-federal-700 hover:text-usgov-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide border border-federal-300 hover:border-usgov-600 transition-colors duration-200"
             >
-              Schedule Demo
+              Request Demo
             </Link>
             <Link
               href="#reserve"
-              className="group bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl hover:scale-105"
+              className="bg-usgov-600 hover:bg-usgov-700 text-white px-6 py-2 text-sm font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-2 border-2 border-usgov-700"
             >
-              <Zap className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
-              <span>Reserve Handle</span>
+              <Shield className="w-4 h-4" />
+              <span>Secure Handle</span>
             </Link>
           </div>
 

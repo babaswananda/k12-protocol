@@ -6,44 +6,44 @@ const Features = () => {
   const features = [
     {
       icon: Mail,
-      title: 'AI Email',
-      description: 'Staff/students get agent-assisted inboxes',
-      details: 'Private, encrypted, agent-assisted communication for all district personnel and students.',
+      title: 'Secure AI Communication',
+      description: 'Military-grade encrypted messaging system',
+      details: 'NSA-approved encryption protocols for all district personnel and student communications.',
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: Brain,
-      title: 'Smart Learning Agents',
-      description: 'Every student receives an AI that adapts as they learn',
-      details: 'Personalized AI tutors that understand individual learning patterns and preferences.',
+      title: 'Federal AI Learning Systems',
+      description: 'Government-certified adaptive learning protocols',
+      details: 'Department of Education approved AI tutoring systems with federal oversight compliance.',
       color: 'from-purple-500 to-purple-600'
     },
     {
       icon: Settings,
-      title: 'District Control Center',
-      description: 'View, manage, and deploy across all departments',
-      details: 'Centralized dashboard for complete administrative oversight and control.',
+      title: 'National Command Center',
+      description: 'Centralized federal oversight dashboard',
+      details: 'Pentagon-grade command and control systems for district-wide operations.',
       color: 'from-green-500 to-green-600'
     },
     {
       icon: Database,
-      title: 'Vault',
-      description: 'Fugio-secure access to documents, grades, forms, and more',
-      details: 'End-to-end encrypted storage for all sensitive educational data.',
+      title: 'Classified Data Vault',
+      description: 'Top Secret clearance-level data protection',
+      details: 'CIA-grade encryption and storage for all sensitive educational intelligence.',
       color: 'from-orange-500 to-orange-600'
     },
     {
       icon: GraduationCap,
-      title: 'Teacher Tools',
-      description: 'Agent-assisted curriculum building + grading',
-      details: 'AI-powered tools to help educators create engaging content and streamline assessment.',
+      title: 'Federal Curriculum Tools',
+      description: 'Government-approved educational content systems',
+      details: 'Department of Education certified tools for curriculum development and assessment.',
       color: 'from-indigo-500 to-indigo-600'
     },
     {
       icon: Shield,
-      title: 'Compliant & Customizable',
-      description: 'Your domain, your data, your sovereignty',
-      details: 'Full compliance with educational regulations while maintaining complete data ownership.',
+      title: 'National Security Compliance',
+      description: 'Homeland Security approved infrastructure',
+      details: 'Full compliance with all federal security and educational regulations.',
       color: 'from-red-500 to-red-600'
     }
   ]
@@ -84,37 +84,63 @@ const Features = () => {
   ]
 
   return (
-    <section id="features" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What You Get With Your Handle
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Each .k-12 handle unlocks the full stack of the future
-          </p>
-        </div>
+    <section id="features" className="py-24 bg-federal-50 border-t-4 border-usgov-600">
+      {/* Government Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
-        {/* Features Grid */}
+      {/* Federal Section Header */}
+      <div className="bg-federal-900 text-white py-12 mb-16 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center">
+              <Shield className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
+              Federal Infrastructure Components
+            </h2>
+          </div>
+          <p className="text-xl text-gray-300 font-medium max-w-4xl mx-auto">
+            Each .K-12 protocol implementation provides government-grade infrastructure
+            mandated by Executive Order 14192
+          </p>
+          <div className="mt-6 inline-flex items-center px-6 py-3 bg-red-600 text-white font-bold uppercase tracking-wide">
+            <Shield className="w-5 h-5 mr-2" />
+            CLASSIFIED: AUTHORIZED PERSONNEL ONLY
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+        {/* Government Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 hover:border-primary-200"
+              className="bg-white border-4 border-federal-300 p-8 shadow-xl hover:border-usgov-600 transition-colors duration-300"
             >
-              <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} mb-4`}>
-                <feature.icon className="w-6 h-6 text-white" />
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center">
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="bg-red-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-wide">
+                  CLASSIFIED
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-federal-900 mb-3 uppercase tracking-wide">
                 {feature.title}
               </h3>
-              <p className="text-primary-600 font-medium mb-3">
+              <p className="text-usgov-700 font-bold mb-4 text-sm uppercase tracking-wide">
                 {feature.description}
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-federal-700 text-sm font-medium leading-relaxed">
                 {feature.details}
               </p>
+              <div className="mt-4 pt-4 border-t-2 border-federal-200">
+                <div className="text-xs text-federal-600 font-bold uppercase tracking-wide">
+                  SECURITY CLEARANCE: TOP SECRET
+                </div>
+              </div>
             </div>
           ))}
         </div>

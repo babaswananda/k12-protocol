@@ -9,17 +9,44 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
+        // Federal Government Color Palette
+        federal: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+        },
+        // Official US Government Blue
+        usgov: {
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
           300: '#93c5fd',
           400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
+          500: '#1c4ed8', // Official government blue
+          600: '#1e40af',
           700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          800: '#1e3a8a',
+          900: '#172554',
+        },
+        // Department of Education Colors
+        education: {
+          50: '#fefce8',
+          100: '#fef9c3',
+          200: '#fef08a',
+          300: '#fde047',
+          400: '#facc15',
+          500: '#eab308',
+          600: '#ca8a04',
+          700: '#a16207',
+          800: '#854d0e',
+          900: '#713f12',
         },
         federal: {
           50: '#f8fafc',
@@ -59,9 +86,13 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        // Federal Government Typography
+        sans: ['Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        serif: ['Merriweather', 'Georgia', 'Times New Roman', 'serif'],
+        mono: ['Roboto Mono', 'Consolas', 'Monaco', 'monospace'],
+        // Official government fonts
+        federal: ['Source Sans Pro', 'system-ui', 'sans-serif'],
+        display: ['Merriweather', 'Georgia', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

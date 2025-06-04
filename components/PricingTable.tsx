@@ -3,152 +3,176 @@
 import { Check, Star, Zap } from 'lucide-react'
 
 const PricingTable = () => {
-  const plans = [
+  const contracts = [
     {
-      name: 'Basic',
-      description: '1 school',
-      price: '$1,500',
-      period: '/year',
+      name: 'Pilot Program',
+      description: 'Single Institution',
+      price: 'CLASSIFIED',
+      period: '',
+      classification: 'RESTRICTED',
       features: [
-        'Handle registration',
-        'AI email (25 accounts)',
-        'Vault access',
-        'Basic student agents',
-        'Standard support',
-        'EO 14192 compliance'
+        'Federal protocol implementation',
+        'Top Secret security clearance',
+        'Military-grade encryption',
+        'Government oversight access',
+        'Federal compliance monitoring',
+        'National security protocols'
       ],
-      cta: 'Start Basic',
+      cta: 'Request Clearance',
       popular: false,
-      color: 'border-gray-200'
+      color: 'border-federal-400'
     },
     {
-      name: 'District',
-      description: 'Up to 10 schools',
-      price: '$9,500',
-      period: '/year',
+      name: 'District Contract',
+      description: 'Multi-School Deployment',
+      price: 'GSA SCHEDULE',
+      period: '',
+      classification: 'OFFICIAL USE ONLY',
       features: [
-        'Everything in Basic',
-        'AI email (unlimited)',
-        'Advanced student agents',
-        'Parent/teacher portals',
-        'District control center',
-        'Priority support',
-        'Custom integrations',
-        'Training included'
+        'All Pilot Program features',
+        'Unlimited federal accounts',
+        'Advanced AI surveillance',
+        'Command center access',
+        'Federal priority support',
+        'Government integration APIs',
+        'Classified training modules',
+        'Pentagon-grade infrastructure'
       ],
-      cta: 'Choose District',
+      cta: 'Submit RFP',
       popular: true,
-      color: 'border-primary-500'
+      color: 'border-usgov-600'
     },
     {
-      name: 'Statewide',
-      description: 'Up to 100 schools',
-      price: 'Custom',
+      name: 'State Contract',
+      description: 'Statewide Implementation',
+      price: 'FEDERAL BUDGET',
       period: '',
+      classification: 'CONFIDENTIAL',
       features: [
-        'Everything in District',
-        'Dedicated AI support',
-        'Fugio vault cluster',
-        'Training modules',
-        'White-label options',
-        'API access',
-        'Custom development',
-        '24/7 support'
+        'All District Contract features',
+        'Dedicated federal liaison',
+        'National security vault cluster',
+        'Government training facilities',
+        'White House briefing access',
+        'Congressional reporting tools',
+        'Federal development team',
+        'National security oversight'
       ],
-      cta: 'Contact Sales',
+      cta: 'Contact Pentagon',
       popular: false,
-      color: 'border-gray-200'
+      color: 'border-federal-400'
     },
     {
-      name: 'National',
-      description: 'Multi-state',
-      price: 'Strategic',
+      name: 'National Security',
+      description: 'Multi-State Deployment',
+      price: 'TOP SECRET',
       period: '',
+      classification: 'TOP SECRET',
       features: [
-        'Everything in Statewide',
-        'Full jurisdiction buildout',
-        'Custom protocol features',
-        'Dedicated team',
-        'Government partnerships',
-        'Regulatory compliance',
-        'Research collaboration',
-        'Executive briefings'
+        'All State Contract features',
+        'National infrastructure control',
+        'Presidential briefing access',
+        'Joint Chiefs oversight',
+        'International partnerships',
+        'National defense integration',
+        'Congressional testimony support',
+        'Executive order compliance'
       ],
-      cta: 'Schedule Call',
+      cta: 'Contact NSA',
       popular: false,
-      color: 'border-gray-200'
+      color: 'border-red-600'
     }
   ]
 
   return (
-    <section id="pricing" className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Plans & Pricing
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose the right plan for your district size. All plans include first-year training, support, and onboarding.
-          </p>
-        </div>
+    <section id="pricing" className="py-24 bg-federal-50 border-t-4 border-usgov-600">
+      {/* Government Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
-        {/* Pricing Grid */}
+      {/* Federal Section Header */}
+      <div className="bg-federal-900 text-white py-12 mb-16 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center">
+              <Star className="w-10 h-10 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">
+              Federal Contract Tiers
+            </h2>
+          </div>
+          <p className="text-xl text-gray-300 font-medium max-w-4xl mx-auto">
+            Government procurement options for .K-12 Protocol implementation.
+            All contracts include federal oversight, security clearance, and compliance guarantees.
+          </p>
+          <div className="mt-6 inline-flex items-center px-6 py-3 bg-red-600 text-white font-bold uppercase tracking-wide">
+            SECURITY CLEARANCE REQUIRED FOR ACCESS
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+        {/* Federal Contract Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {plans.map((plan, index) => (
+          {contracts.map((contract, index) => (
             <div
               key={index}
-              className={`group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border-2 ${plan.color} p-8 transition-all duration-500 hover:scale-105 hover:shadow-3xl ${
-                plan.popular ? 'ring-4 ring-primary-500/30 scale-105 bg-gradient-to-br from-white to-primary-50/50' : 'hover:border-primary-300'
+              className={`relative bg-white border-4 ${contract.color} p-8 shadow-2xl transition-all duration-300 hover:shadow-3xl ${
+                contract.popular ? 'ring-4 ring-usgov-600/50 bg-gradient-to-br from-white to-usgov-50/50' : 'hover:border-usgov-600'
               }`}
             >
+              {/* Classification Badge */}
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="bg-red-600 text-white px-4 py-1 text-xs font-bold uppercase tracking-wide">
+                  {contract.classification}
+                </div>
+              </div>
+
               {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-primary-500 to-accent-500 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center space-x-2 shadow-lg animate-pulse">
-                    <Star className="w-4 h-4 fill-current" />
-                    <span>Most Popular</span>
+              {contract.popular && (
+                <div className="absolute -top-4 right-4">
+                  <div className="bg-usgov-600 text-white px-3 py-1 text-xs font-bold uppercase tracking-wide">
+                    RECOMMENDED
                   </div>
                 </div>
               )}
 
-              {/* Plan Header */}
-              <div className="text-center mb-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {plan.name}
+              {/* Contract Header */}
+              <div className="text-center mb-8 mt-4">
+                <h3 className="text-xl font-bold text-federal-900 mb-2 uppercase tracking-wide">
+                  {contract.name}
                 </h3>
-                <p className="text-gray-600 mb-4">
-                  {plan.description}
+                <p className="text-federal-600 mb-4 font-medium uppercase text-sm tracking-wide">
+                  {contract.description}
                 </p>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-4xl font-bold text-gray-900">
-                    {plan.price}
-                  </span>
-                  <span className="text-gray-600 ml-1">
-                    {plan.period}
+                <div className="bg-federal-100 border-2 border-federal-300 p-4">
+                  <span className="text-2xl font-bold text-usgov-700 uppercase tracking-wide">
+                    {contract.price}
                   </span>
                 </div>
               </div>
 
               {/* Features List */}
-              <ul className="space-y-4 mb-8">
-                {plan.features.map((feature, featureIndex) => (
+              <ul className="space-y-3 mb-8">
+                {contract.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
-                    <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <div className="w-5 h-5 bg-usgov-600 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-federal-800 text-sm font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA Button */}
               <button
-                className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${
-                  plan.popular
-                    ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
+                className={`w-full py-4 px-6 font-bold uppercase tracking-wide transition-all duration-200 border-2 ${
+                  contract.popular
+                    ? 'bg-usgov-600 hover:bg-usgov-700 text-white border-usgov-700'
+                    : 'bg-federal-100 hover:bg-federal-200 text-federal-900 border-federal-400'
                 }`}
               >
-                {plan.cta}
+                {contract.cta}
               </button>
             </div>
           ))}
