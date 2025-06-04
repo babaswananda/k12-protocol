@@ -48,17 +48,18 @@ module.exports = {
           800: '#854d0e',
           900: '#713f12',
         },
-        federal: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
+        // Primary color palette
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
         accent: {
           50: '#fef7ff',
@@ -93,6 +94,11 @@ module.exports = {
         // Official government fonts
         federal: ['Source Sans Pro', 'system-ui', 'sans-serif'],
         display: ['Merriweather', 'Georgia', 'serif'],
+      },
+      borderRadius: {
+        'government': '6px', // 15% rounded corners for government elements
+        'government-sm': '4px', // Small government radius
+        'government-lg': '8px', // Large government radius
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

@@ -45,7 +45,7 @@ const CTASection = () => {
   return (
     <section className="py-24 bg-federal-50 border-t-4 border-usgov-600 relative">
       {/* Government Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
 
       {/* Federal Section Header */}
       <div className="bg-federal-900 text-white py-12 mb-16 relative">
@@ -95,7 +95,7 @@ const CTASection = () => {
               </p>
 
               <button
-                className={`w-full py-4 px-6 font-bold uppercase tracking-wide transition-all duration-200 flex items-center justify-center space-x-2 ${action.buttonStyle}`}
+                className={`w-full py-4 px-6 font-bold uppercase tracking-wide transition-all duration-200 flex items-center justify-center space-x-2 rounded-government ${action.buttonStyle}`}
               >
                 <span>{action.buttonText}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -131,11 +131,11 @@ const CTASection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-usgov-600 hover:bg-usgov-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-2 border-2 border-usgov-700">
+            <button className="bg-usgov-600 hover:bg-usgov-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-2 border-2 border-usgov-700 rounded-government">
               <span>Begin Federal Implementation</span>
               <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-wide hover:bg-white hover:text-federal-900 transition-all duration-200">
+            <button className="border-2 border-white text-white px-10 py-4 font-bold uppercase tracking-wide hover:bg-white hover:text-federal-900 transition-all duration-200 rounded-government">
               Contact Federal Liaison
             </button>
           </div>

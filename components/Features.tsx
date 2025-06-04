@@ -1,6 +1,7 @@
 'use client'
 
 import { Mail, Users, Shield, Brain, Database, Zap, GraduationCap, Settings } from 'lucide-react'
+import { GlowingCard } from './ui/glowing-card'
 
 const Features = () => {
   const features = [
@@ -86,7 +87,7 @@ const Features = () => {
   return (
     <section id="features" className="py-24 bg-federal-50 border-t-4 border-usgov-600">
       {/* Government Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
       {/* Federal Section Header */}
       <div className="bg-federal-900 text-white py-12 mb-16 relative">
@@ -115,9 +116,11 @@ const Features = () => {
         {/* Government Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {features.map((feature, index) => (
-            <div
+            <GlowingCard
               key={index}
-              className="bg-white border-4 border-federal-300 p-8 shadow-xl hover:border-usgov-600 transition-colors duration-300"
+              className="bg-white border-4 border-federal-300 p-8 shadow-xl"
+              glowColor="rgba(29, 78, 216, 0.3)"
+              borderWidth="1px"
             >
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-16 h-16 bg-usgov-600 flex items-center justify-center">
@@ -141,7 +144,7 @@ const Features = () => {
                   SECURITY CLEARANCE: TOP SECRET
                 </div>
               </div>
-            </div>
+            </GlowingCard>
           ))}
         </div>
 

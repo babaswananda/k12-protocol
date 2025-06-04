@@ -220,9 +220,9 @@ export default function DemoPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2"
+                  className="w-full bg-usgov-600 hover:bg-usgov-700 text-white px-8 py-4 rounded-government font-bold uppercase tracking-wide transition-all duration-200 flex items-center justify-center space-x-2"
                 >
-                  <span>Schedule Demo</span>
+                  <span>Submit Federal Request</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </form>

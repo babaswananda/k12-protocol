@@ -70,13 +70,13 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-3">
             <Link
               href="/demo"
-              className="text-federal-700 hover:text-usgov-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide border border-federal-300 hover:border-usgov-600 transition-colors duration-200"
+              className="text-federal-700 hover:text-usgov-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide border border-federal-300 hover:border-usgov-600 transition-colors duration-200 rounded-government"
             >
               Request Demo
             </Link>
             <Link
               href="#reserve"
-              className="bg-usgov-600 hover:bg-usgov-700 text-white px-6 py-2 text-sm font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-2 border-2 border-usgov-700"
+              className="bg-usgov-600 hover:bg-usgov-700 text-white px-6 py-2 text-sm font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-2 border-2 border-usgov-700 rounded-government"
             >
               <Shield className="w-4 h-4" />
               <span>Secure Handle</span>

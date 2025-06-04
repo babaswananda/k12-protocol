@@ -37,7 +37,7 @@ const TestimonialsSection = () => {
   return (
     <section className="py-24 bg-federal-900 text-white border-t-4 border-usgov-600 relative">
       {/* Government Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Federal Header */}
@@ -138,10 +138,10 @@ const TestimonialsSection = () => {
               and implementation guidelines for authorized district personnel.
             </p>
             <div className="space-y-4">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 mr-4">
+              <button className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 mr-4 rounded-government">
                 Download Security Clearance Forms
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-usgov-800 px-10 py-4 font-bold uppercase tracking-wide transition-all duration-200">
+              <button className="border-2 border-white text-white hover:bg-white hover:text-usgov-800 px-10 py-4 font-bold uppercase tracking-wide transition-all duration-200 rounded-government">
                 Request Federal Briefing
               </button>
             </div>

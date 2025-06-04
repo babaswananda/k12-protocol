@@ -1,6 +1,7 @@
 'use client'
 
 import { Check, Star, Zap } from 'lucide-react'
+import { GlowingCard } from './ui/glowing-card'
 
 const PricingTable = () => {
   const contracts = [
@@ -87,7 +88,7 @@ const PricingTable = () => {
   return (
     <section id="pricing" className="py-24 bg-federal-50 border-t-4 border-usgov-600 relative">
       {/* Government Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
       {/* Federal Section Header */}
       <div className="bg-federal-900 text-white py-12 mb-16 relative">
@@ -115,11 +116,13 @@ const PricingTable = () => {
         {/* Federal Contract Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {contracts.map((contract, index) => (
-            <div
+            <GlowingCard
               key={index}
-              className={`relative bg-white border-4 ${contract.color} p-8 shadow-2xl transition-all duration-300 hover:shadow-3xl ${
-                contract.popular ? 'ring-4 ring-usgov-600/50 bg-gradient-to-br from-white to-usgov-50/50' : 'hover:border-usgov-600'
+              className={`relative bg-white border-4 ${contract.color} p-8 shadow-2xl ${
+                contract.popular ? 'ring-4 ring-usgov-600/50 bg-gradient-to-br from-white to-usgov-50/50' : ''
               }`}
+              glowColor="rgba(29, 78, 216, 0.3)"
+              borderWidth="1px"
             >
               {/* Classification Badge */}
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -166,7 +169,7 @@ const PricingTable = () => {
 
               {/* CTA Button */}
               <button
-                className={`w-full py-4 px-6 font-bold uppercase tracking-wide transition-all duration-200 border-2 ${
+                className={`w-full py-4 px-6 font-bold uppercase tracking-wide transition-all duration-200 border-2 rounded-government ${
                   contract.popular
                     ? 'bg-usgov-600 hover:bg-usgov-700 text-white border-usgov-700'
                     : 'bg-federal-100 hover:bg-federal-200 text-federal-900 border-federal-400'
@@ -174,7 +177,7 @@ const PricingTable = () => {
               >
                 {contract.cta}
               </button>
-            </div>
+            </GlowingCard>
           ))}
         </div>
 

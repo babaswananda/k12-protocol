@@ -36,7 +36,7 @@ const WhyK12Section = () => {
   return (
     <section id="why-k12" className="py-24 bg-federal-50 border-t-4 border-usgov-600 relative">
       {/* Government Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
       {/* Government Section Header */}
       <div className="bg-federal-900 text-white py-8 mb-16">
@@ -103,7 +103,7 @@ const WhyK12Section = () => {
               </div>
             </div>
 
-            <button className="bg-usgov-600 hover:bg-usgov-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-3 border-2 border-usgov-700">
+            <button className="bg-usgov-600 hover:bg-usgov-700 text-white px-10 py-4 font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-3 border-2 border-usgov-700 rounded-government">
               <Shield className="w-5 h-5" />
               <span>Access Compliance Documentation</span>
               <ArrowRight className="w-5 h-5" />

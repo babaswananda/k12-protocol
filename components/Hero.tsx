@@ -91,12 +91,12 @@ const Hero = () => {
 
           {/* Government CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button className="bg-usgov-600 hover:bg-usgov-700 text-white px-12 py-4 text-lg font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-3 shadow-lg border-2 border-usgov-700">
+            <button className="bg-usgov-600 hover:bg-usgov-700 text-white px-12 py-4 text-lg font-bold uppercase tracking-wide transition-colors duration-200 flex items-center space-x-3 shadow-lg border-2 border-usgov-700 rounded-government">
               <Shield className="w-6 h-6" />
               <span>Secure District Handle</span>
               <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="border-2 border-federal-400 hover:border-usgov-600 bg-white text-federal-800 hover:text-usgov-700 px-12 py-4 text-lg font-bold uppercase tracking-wide transition-all duration-200 flex items-center space-x-3">
+            <button className="border-2 border-federal-400 hover:border-usgov-600 bg-white text-federal-800 hover:text-usgov-700 px-12 py-4 text-lg font-bold uppercase tracking-wide transition-all duration-200 flex items-center space-x-3 rounded-government">
               <Users className="w-6 h-6" />
               <span>Request Official Demo</span>
               <ArrowRight className="w-5 h-5" />
@@ -128,7 +128,7 @@ const Hero = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-usgov-600 hover:bg-usgov-700 text-white px-6 py-4 font-bold uppercase tracking-wide transition-colors duration-200"
+                  className="w-full bg-usgov-600 hover:bg-usgov-700 text-white px-6 py-4 font-bold uppercase tracking-wide transition-colors duration-200 rounded-government"
                 >
                   Submit Official Request
                 </button>
