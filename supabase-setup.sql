@@ -15,5 +15,9 @@ CREATE TABLE nda_signatures (
   signed_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- Create initial access code for testing
-INSERT INTO access_codes (code, used) VALUES ('TESTCODE123', FALSE);
+-- Create initial access codes
+INSERT INTO access_codes (code, used) VALUES ('AIMANDATE001', FALSE);
+INSERT INTO access_codes (code, used) VALUES ('AIMANDATE002', FALSE);
+INSERT INTO access_codes (code, used) VALUES ('AIMANDATE003', FALSE);
+INSERT INTO access_codes (code, used) VALUES ('AIMANDATE004', FALSE);
+INSERT INTO access_codes (code, used) VALUES ('AIMANDATE005', FALSE);

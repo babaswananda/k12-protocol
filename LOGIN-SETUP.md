@@ -67,6 +67,11 @@ This document provides instructions for setting up and using the K-12 Protocol l
 
 The login system uses one-time access codes. Each code can only be used once and is associated with the email that used it.
 
+**Current Access Codes:**
+- `AIMANDATE001` - `AIMANDATE005` (Initial codes)
+- `AIMANDATE006` - `AIMANDATE015` (Additional codes)
+- `AK-AIMANDATE001` - `AK-AIMANDATE003` (Federal Liaison Adan Knowles)
+
 ### Login Flow
 
 1. User visits the site and is redirected to the login page
