@@ -2,10 +2,14 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Menu, X, Shield, Zap } from 'lucide-react'
+import { Menu, X, Shield, Zap, LogIn, LogOut } from 'lucide-react'
+import { useAuth } from './AuthProvider'
+import { useRouter } from 'next/navigation'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { isAuthenticated, logout } = useAuth()
+  const router = useRouter()
 
   const navigation = [
     { name: 'Why .K-12', href: '#why-k12' },
@@ -14,6 +18,11 @@ const Header = () => {
     { name: 'Compliance', href: '/compliance' },
     { name: 'Demo', href: '/demo' },
   ]
+
+  const handleLogout = async () => {
+    await logout()
+    router.push('/login')
+  }
 
   return (
     <header className="bg-white border-b-4 border-usgov-600 sticky top-0 z-50 shadow-sm">
@@ -68,6 +77,23 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="text-federal-700 hover:text-red-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide border border-federal-300 hover:border-red-600 transition-colors duration-200 rounded-government flex items-center space-x-2"
+              >
+                <LogOut className="w-4 h-4" />
+                <span>Logout</span>
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="text-federal-700 hover:text-usgov-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide border border-federal-300 hover:border-usgov-600 transition-colors duration-200 rounded-government flex items-center space-x-2"
+              >
+                <LogIn className="w-4 h-4" />
+                <span>Login</span>
+              </Link>
+            )}
             <Link
               href="/demo"
               className="text-federal-700 hover:text-usgov-600 px-4 py-2 text-sm font-semibold uppercase tracking-wide border border-federal-300 hover:border-usgov-600 transition-colors duration-200 rounded-government"
@@ -115,6 +141,27 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
+                {isAuthenticated ? (
+                  <button
+                    onClick={() => {
+                      handleLogout();
+                      setIsMenuOpen(false);
+                    }}
+                    className="text-red-600 hover:text-red-700 flex items-center space-x-2 px-3 py-2 text-base font-medium w-full"
+                  >
+                    <LogOut className="w-5 h-5" />
+                    <span>Logout</span>
+                  </button>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="text-usgov-600 hover:text-usgov-700 flex items-center space-x-2 px-3 py-2 text-base font-medium"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <LogIn className="w-5 h-5" />
+                    <span>Login</span>
+                  </Link>
+                )}
                 <Link
                   href="/demo"
                   className="text-primary-600 hover:text-primary-700 block px-3 py-2 text-base font-medium"
